@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  NavigationContainer,
-  DefaultTheme,
-  DarkTheme,
-} from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native";
 import { useColorScheme } from "react-native-appearance";
 import { createStackNavigator } from "@react-navigation/stack";
 

@@ -10,7 +10,9 @@ const rootReducer = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default store = createStore(
+const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunk), Reactotron.createEnhancer())
+  composeEnhancers(applyMiddleware(thunk), Reactotron.createEnhancer()),
 );
+
+export default store;
