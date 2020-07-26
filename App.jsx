@@ -9,17 +9,22 @@ import {
 } from "react-native-paper";
 import { AppearanceProvider, useColorScheme } from "react-native-appearance";
 
+import { Provider as ReduxProvider } from "react-redux";
+import store from "./src/store/store";
+
 export default function App() {
   const scheme = useColorScheme();
 
   return (
-    <SafeAreaProvider>
-      <AppearanceProvider>
-        <PaperProvider theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
-          <AppNavigator />
-          <StatusBar />
-        </PaperProvider>
-      </AppearanceProvider>
-    </SafeAreaProvider>
+    <ReduxProvider store={store}>
+      <SafeAreaProvider>
+        <AppearanceProvider>
+          <PaperProvider theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
+            <AppNavigator />
+            <StatusBar />
+          </PaperProvider>
+        </AppearanceProvider>
+      </SafeAreaProvider>
+    </ReduxProvider>
   );
 }
